@@ -4,41 +4,67 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      Smakeloos - thuis
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/vector_ornaments.svg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Ga dingen doen!</ion-card-subtitle>
+      <ion-card-title>Welkom bij Smakeloos!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Laten we eens kijken wat voor onzin we allemaal kunnen uithalen hiermee.</p>
+      <p><strong>Stappenteller: </strong>{{ nrOfSteps }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-list-header>
+          <ion-label>Scanner</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-button (click)="scanBardcode()">Scan barcode</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <code>barcode: {{ barcode }}</code></ion-label
+          >
+        </ion-item>
+      </ion-list>
+    </ion-card-content></ion-card
+  >
+
+  <!-- List of Sliding Items -->
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Rare schuiflijst</ion-label>
+        </ion-list-header>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-label>Schuif 1</ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option>Klik</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+
+        <ion-item-sliding>
+          <ion-item>
+            <ion-label>Schuif 2</ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option>Klak</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

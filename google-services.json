@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "730377148256",
+    "firebase_url": "https://shootlr-test.firebaseio.com",
+    "project_id": "shootlr-test",
+    "storage_bucket": "shootlr-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730377148256:android:d488635793c5dd7d",
+        "android_client_info": {
+          "package_name": "nl.elastique.applications.pushtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730377148256-gi2oc5aggi2h6jlq7anrd10m07fbua01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZVoHBrVzaFsA6WjUqPDexh3EEh1KWriI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

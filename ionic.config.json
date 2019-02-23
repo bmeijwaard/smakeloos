@@ -1,5 +1,7 @@
 {
   "name": "smakeloos",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

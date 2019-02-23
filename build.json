@@ -1,0 +1,18 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "smakeloos.keystore",
+      "storePassword": "Waarnemer01!",
+      "alias": "smakeloos",
+      "password": "Waarnemer01!",
+      "keystoreType": ""
+    },
+    "release": {
+      "keystore": "smakeloos.keystore",
+      "storePassword": "Waarnemer01!",
+      "alias": "smakeloos",
+      "password": "Waarnemer01!",
+      "keystoreType": ""
+    }
+  }
+}

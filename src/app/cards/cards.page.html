@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Cards
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="searchForm" (submit)="updateName()" (keyup.enter)="updateName()">
+    <ion-toolbar>
+      <ion-searchbar autofocus type="text" placeholder="Search for a card..." formControlName="namePart"></ion-searchbar>
+    </ion-toolbar>
+    <div text-center>
+      <ion-text color="default" *ngIf="namePart.hasError('required')"><p>Start typing.</p></ion-text>
+      <ion-text color="danger" *ngIf="namePart.hasError('minlength')"><p>Enter at least 4 characters.</p></ion-text>
+      <ion-text color="success" *ngIf="!namePart.hasError('minlength') && !namePart.hasError('required')"><p>Good to go, press enter to search.</p></ion-text>
+    </div>
+  </form>
+
+  <div center text-center style="margin-top:25vh;" *ngIf="isLoading">
+    <ion-spinner></ion-spinner>
+  </div>
+  <div center text-center *ngIf="!isLoading">
+    <ion-text *ngIf="card$"><p>Cards found: {{ (card$ | async).length }}</p></ion-text>
+    <ion-slides scrollbar="true" [options]="slideOpts">
+      <ion-slide *ngFor="let card of (card$ | async)" style="margin-top:10px;">
+        <ion-img [src]="card.imageUrl" style="width: 90%;"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

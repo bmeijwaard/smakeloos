@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { FirebaseMessaging } from '@ionic-native/firebase-messaging/ngx';
+import { Component, NgZone } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, ToastController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -11,9 +12,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
-      url: '/home',
+      title: 'Thuis',
+      url: '/thuis',
       icon: 'home'
+    },
+    {
+      title: 'Cards',
+      url: '/cards',
+      icon: 'card'
     },
     {
       title: 'List',
@@ -21,11 +27,15 @@ export class AppComponent {
       icon: 'list'
     }
   ];
+  observer: any;
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private firebaseMessaging: FirebaseMessaging,
+    private toastCtrl: ToastController,
+    private zone: NgZone
   ) {
     this.initializeApp();
   }
@@ -34,6 +44,17 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+    });
+
+    this.firebaseMessaging.onMessage().subscribe(next => {
+      this.observer = next;
+      this.zone.run(async () => {
+        const toast = await this.toastCtrl.create({
+          message: `${this.observer.gcm.title}: ${this.observer.gcm.body}`,
+          duration: 3000
+        });
+        toast.present();
+      });
     });
   }
 }
