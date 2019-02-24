@@ -19,12 +19,12 @@ export class AppComponent {
     {
       title: 'Cards',
       url: '/cards',
-      icon: 'card'
+      icon: 'search'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Stream',
+      url: '/stream',
+      icon: 'videocam'
     }
   ];
   observer: any;

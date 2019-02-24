@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren: './cards/cards.module#CardsPageModule'
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
+    path: 'stream',
+    loadChildren: './stream/stream.module#StreamPageModule'
   }
 ];
 

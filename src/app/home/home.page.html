@@ -17,8 +17,25 @@
       <ion-card-title>Welkom bij Smakeloos!</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>Laten we eens kijken wat voor onzin we allemaal kunnen uithalen hiermee.</p>
-      <p><strong>Stappenteller: </strong>{{ nrOfSteps }}</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p text-start>Laten we eens kijken wat voor onzin we allemaal kunnen uithalen hiermee.</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h2 text-start>
+              <strong>Stappenteller:</strong>
+            </h2>
+          </ion-col>
+          <ion-col>
+            <h2 text-end>
+              <span>{{ nrOfSteps }}</span>
+            </h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 
